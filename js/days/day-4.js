@@ -1,0 +1,150 @@
+window.DAYS = window.DAYS || {};
+window.DAYS[4] = {
+  id: 4,
+  date: "Mon 28 June 2027 · tentative",
+  title: "Lagoon to Seyðisfjörður",
+  blurb: "Fjallsárlón, Jökulsárlón zodiac, Diamond Beach, Vestrahorn, then the East Fjords to Seyðisfjörður.",
+  sub: "The pinch point of the trip. Five hours of driving on top of a boat tour and a mountain pass.",
+  stats: [
+    { label: "Driving", value: "~5h 05m" },
+    { label: "Walking", value: "~2 km" },
+    { label: "Lodging", value: "Hótel Aldan" },
+  ],
+  budget: [
+    { label: "Hótel Aldan", amount: 300 },
+    { label: "Jökulsárlón zodiac for two", amount: 260 },
+    { label: "Food, including Pakkhús langoustine", amount: 260 },
+  ],
+  before: [
+    "<b>Book the zodiac early</b> — late June fills. ~$130 pp, about 1 hour among the bergs.",
+    "<b>This is a twelve-hour day.</b> Late-June daylight makes it survivable, not pleasant.",
+    "<b>Three ways to soften it:</b> drop Stokksnes (saves 45 min); Öxi / Route 939 cuts Höfn→Egilsstaðir by about an hour but is a steep pass, historically gravel, and some rentals exclude it; or split with a night in Djúpivogur (Hótel Framtíð) and lose the Seyðisfjörður evening.",
+    "<b>Fjarðarheiði</b> is a real pass with hairpins and frequent summer fog. Don't rush it at the end of a long day.",
+  ],
+  items: [
+    {
+      type: "connector",
+      time: "20 min",
+      label: "Fosshotel Glacier Lagoon → Fjallsárlón",
+      url: "https://www.google.com/maps/dir/?api=1&origin=Fosshotel%20Glacier%20Lagoon&destination=Fjalls%C3%A1rl%C3%B3n&travelmode=driving",
+    },
+    {
+      type: "stop",
+      time: "8:30 AM",
+      title: "Fjallsárlón",
+      sub: "30 min",
+      body: ["Smaller, quieter, glacier front much closer than Jökulsárlón."],
+      links: [
+        ["Maps", "https://www.google.com/maps/search/?api=1&query=Fjalls%C3%A1rl%C3%B3n"],
+      ],
+      img: "fjallsarlon.jpg",
+    },
+    {
+      type: "connector",
+      time: "10 min",
+      label: "Fjallsárlón → Jökulsárlón",
+      url: "https://www.google.com/maps/dir/?api=1&origin=Fjalls%C3%A1rl%C3%B3n&destination=J%C3%B6kuls%C3%A1rl%C3%B3n&travelmode=driving",
+    },
+    {
+      type: "stop",
+      time: "9:15 AM",
+      title: "Jökulsárlón — zodiac",
+      sub: "1 hr",
+      body: ["Boat among the bergs. Amphibian tours are the cheaper fallback if the zodiac is full."],
+      links: [
+        ["Jökulsárlón boat tours", "https://icelandglacierlagoon.is/"],
+        ["Maps", "https://www.google.com/maps/search/?api=1&query=J%C3%B6kuls%C3%A1rl%C3%B3n"],
+      ],
+      cost: "~$130 pp",
+      img: "jokulsarlon.jpg",
+    },
+    {
+      type: "stop",
+      time: "11:00 AM",
+      title: "Diamond Beach",
+      sub: "30 min",
+      body: ["Ice on black sand, across the road from the lagoon. Stay back from the surf."],
+      links: [
+        ["Maps", "https://www.google.com/maps/search/?api=1&query=Diamond%20Beach%20Iceland"],
+      ],
+      img: "diamond-beach.jpg",
+    },
+    {
+      type: "connector",
+      time: "1h",
+      label: "Jökulsárlón → Höfn",
+      url: "https://www.google.com/maps/dir/?api=1&origin=J%C3%B6kuls%C3%A1rl%C3%B3n&destination=H%C3%B6fn&travelmode=driving",
+    },
+    {
+      type: "stop",
+      time: "12:45 PM",
+      title: "Stokksnes / Vestrahorn",
+      sub: "45 min",
+      optional: true,
+      body: [
+        "~$10 entry, black dunes under a serrated peak. The least essential stop today — drop it if the day is already slipping.",
+      ],
+      links: [
+        ["Maps", "https://www.google.com/maps/search/?api=1&query=Vestrahorn%20Stokksnes"],
+      ],
+      cost: "~$10 entry",
+      img: "vestrahorn.jpg",
+    },
+    {
+      type: "stop",
+      time: "2:00 PM",
+      title: "Lunch at Pakkhús, Höfn",
+      sub: "1 hr",
+      body: ["Langoustine — this is the town for it. Confirm kitchen hours."],
+      links: [
+        ["Pakkhús", "https://pakkhus.is/"],
+        ["Maps", "https://www.google.com/maps/search/?api=1&query=Pakkh%C3%BAs%20H%C3%B6fn"],
+      ],
+      cost: "counted in food",
+      img: "pakkhus.jpg",
+    },
+    {
+      type: "connector",
+      time: "3h 20m",
+      label: "Höfn → Egilsstaðir",
+      url: "https://www.google.com/maps/dir/?api=1&origin=H%C3%B6fn&destination=Egilssta%C3%B0ir&travelmode=driving",
+    },
+    {
+      type: "stop",
+      time: "3:15 PM",
+      title: "East Fjords",
+      sub: "Djúpivogur → Fáskrúðsfjörður → Reyðarfjörður",
+      body: [
+        "The long drive. Stops as energy allows. Öxi (Route 939) is a shorter mountain alternative — check road status and the rental contract before counting on it.",
+      ],
+      links: [
+        ["Road conditions", "https://umferdin.is/en"],
+      ],
+      img: "east-fjords.jpg",
+    },
+    {
+      type: "connector",
+      time: "30 min",
+      label: "Egilsstaðir → Seyðisfjörður",
+      url: "https://www.google.com/maps/dir/?api=1&origin=Egilssta%C3%B0ir&destination=Sey%C3%B0isfj%C3%B6r%C3%B0ur&travelmode=driving",
+    },
+    {
+      type: "stop",
+      time: "7:45 PM",
+      title: "Seyðisfjörður — Hótel Aldan",
+      sub: "check in and dinner",
+      body: [
+        "Dinner at Nord Austur sushi above the Aldan, or Skaftfell Bistro. One of the nicest evenings on the route — don't rush Fjarðarheiði to get here.",
+      ],
+      links: [
+        ["Hótel Aldan", "https://hotelaldan.is/"],
+        ["Nord Austur", "https://nordaustur.is/"],
+        ["Skaftfell Bistro", "https://skaftfell.is/"],
+        ["Maps", "https://www.google.com/maps/search/?api=1&query=H%C3%B3tel%20Aldan%20Sey%C3%B0isfj%C3%B6r%C3%B0ur"],
+      ],
+      cost: "~$300 lodging",
+      imgs: ["hotel-aldan.jpg", "seydisfjordur.jpg", "nord-austur.jpg"],
+    },
+  ],
+  note: "Five hours of driving. Drop Stokksnes first if you need time. Fjarðarheiði in fog is not the moment to make up minutes.",
+};

@@ -1,0 +1,42 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Build precache list
+        run: python3 scripts/write-precache.py
+
+      - name: Zip site
+        run: |
+          zip -r ringroad-itinerary.zip \
+            index.html css js images icons fonts \
+            manifest.webmanifest sw.js precache.json \
+            -x "**/.gitkeep" "**/.DS_Store"
+
+      - name: Create GitHub Release
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          if [ "$GITHUB_EVENT_NAME" = "workflow_dispatch" ]; then
+            TAG="offline-$(date +%Y%m%d-%H%M)"
+            gh release create "$TAG" ringroad-itinerary.zip \
+              --title "Ring Road itinerary $TAG" \
+              --notes "Offline copy of the itinerary. Unzip, then on iPhone open index.html from Files (opens in Safari). Prefer Safari → Add to Home Screen on the live site."
+          else
+            gh release create "$TAG" ringroad-itinerary.zip \
+              --title "Ring Road itinerary $TAG" \
+              --notes "Offline copy of the itinerary. Unzip, then on iPhone open index.html from Files (opens in Safari). Prefer Safari → Add to Home Screen on the live site."
+          fi

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#1d2d3d">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Ring Road">
+  <title>Ring Road — anniversary</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
+</head>
+<body>
+  <nav class="site-nav" aria-label="Days">
+    <div class="site-nav-inner">
+      <div class="brand">
+        <div class="brand-left">
+          <h1>Ring Road</h1>
+          <p>Anniversary · June–July 2027</p>
+        </div>
+        <div class="nav-actions">
+          <a class="nav-btn" id="overview-link" href="#overview">Overview</a>
+          <a class="nav-btn" id="packing-link" href="#packing">Packing</a>
+        </div>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Days" id="tabs"></div>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section class="panel is-active" id="panel-overview" role="tabpanel" data-panel="overview">
+      <figure class="hero blueprint">
+        <img src="./images/day-4/jokulsarlon.jpg" alt="Jökulsárlón">
+      </figure>
+      <header class="overview-hero">
+        <p class="kicker">Ring Road · counterclockwise · Blue Lagoon to Sky Lagoon</p>
+        <h2>Nine days</h2>
+        <p class="sub">Arrive Keflavík, a Retreat Spa morning, then the south coast, glacier lagoon, East Fjords, Mývatn, whales at Húsavík, and a last night in Reykjavík with Sky Lagoon. Route 1 the whole way — no highland F-roads.</p>
+        <p class="sub">Tentative: Fri 25 Jun – Sat 3 Jul 2027. Two people, Toyota RAV4. Flights and reservations are still to confirm; all times are planning targets. Night 1 at Berg carries the same early-arrival-access question as any KEF morning landing.</p>
+      </header>
+
+      <h3 class="section-label">Where we sleep</h3>
+      <ul class="bases">
+        <li><span class="base-tag">Night 1 · Jun 25</span> Hotel Berg, Keflavík — early arrival access to arrange separately</li>
+        <li><span class="base-tag">Night 2 · Jun 26</span> Black Beach Suites, Vík — one night</li>
+        <li><span class="base-tag">Night 3 · Jun 27</span> Fosshotel Glacier Lagoon, Freysnes / Hof</li>
+        <li><span class="base-tag">Night 4 · Jun 28</span> Hótel Aldan, Seyðisfjörður</li>
+        <li><span class="base-tag">Night 5 · Jun 29</span> Vogafjós Farm Resort, Mývatn</li>
+        <li><span class="base-tag">Night 6 · Jun 30</span> Hotel Kea, Akureyri</li>
+        <li><span class="base-tag">Night 7 · Jul 1</span> Hótel Hvammstangi, Vatnsnes</li>
+        <li><span class="base-tag">Night 8 · Jul 2</span> Hotel Borg, Reykjavík — Sky Lagoon that afternoon</li>
+      </ul>
+
+      <h3 class="section-label">The days</h3>
+      <ol class="day-index" id="day-index"></ol>
+
+      <h3 class="section-label">Overall cost</h3>
+      <div class="costs-box">
+        <ul class="costs" id="trip-cost"></ul>
+      </div>
+      <p class="costs-note">Estimates for two in USD, not confirmed quotes or guaranteed exchange rates. Eight Iceland overnight stays are counted once. Flights, any rental-coverage upgrade beyond the allowance, Berg early access and optional extras are additional. Retreat Spa day passes are the largest single activity line — confirm whether the published rate is per person or per changing room before budgeting. Each day has an expandable cost breakdown. Fuel and the RAV4 rental are counted once above.</p>
+
+      <h3 class="section-label">Overall driving</h3>
+      <div class="costs-box">
+        <ul class="costs" id="trip-drive"></ul>
+      </div>
+      <p class="costs-note">Planned driving from each day page. Times are planning allowances, not live traffic estimates. Add 10–15% for photo stops. The only repeated road is the 25-minute hop back to Sólheimajökull on Day 3. Day 4 is the long one (~5h 05m). Optional extras stay off the total: Öxi instead of Route 1, the Tröllaskagi loop, Bjórböðin, Hengifoss.</p>
+
+      <p class="swap-note">Route 1 is fully paved and the plan. Öxi (Rd 939) and Dettifoss east (Rd 864) are gravel fallbacks only — check the rental contract and umferdin.is before counting on either. Book the glacier hike, Jökulsárlón zodiac, whale watching, Retreat Spa and Dill months ahead; late June fills. Check almannavarnir.is on Day 1 if Reykjanes vents are closed.</p>
+
+      <p class="offline-note">Open the Home Screen app on Wi-Fi after updates and check the day pages before going offline. Download Iceland maps separately, including the East Fjords and Möðrudalsöræfi: external maps, booking links and live conditions need connectivity. Offline itinerary notes cannot report current closures.</p>
+    </section>
+
+    <section class="panel" id="panel-packing" role="tabpanel" data-panel="packing">
+      <header class="pack-head">
+        <p class="kicker" id="pack-count"></p>
+        <h2 class="pack-title">Packing</h2>
+        <p class="sub">Drafted from the day pages — every line here comes from something the itinerary already asks for. Taps are saved on this phone.</p>
+      </header>
+      <div id="pack-list"></div>
+    </section>
+
+    <div id="day-panels"></div>
+  </main>
+
+  <script src="./js/days/day-1.js"></script>
+  <script src="./js/days/day-2.js"></script>
+  <script src="./js/days/day-3.js"></script>
+  <script src="./js/days/day-4.js"></script>
+  <script src="./js/days/day-5.js"></script>
+  <script src="./js/days/day-6.js"></script>
+  <script src="./js/days/day-7.js"></script>
+  <script src="./js/days/day-8.js"></script>
+  <script src="./js/days/day-9.js"></script>
+  <script src="./js/packing.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>
